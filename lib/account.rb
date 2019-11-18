@@ -7,31 +7,21 @@ class Account
     @balance = 0
   end
 
-  def add_money(money)
+  def deposit(money)
     self.balance += money
+    # Time.now.strftime('%d/%m/%Y')
   end
 
-  def withdraw_money(money)
+  def withdraw(money)
     self.balance -= money
+    # Time.now.strftime('%d/%m/%Y')
   end
 
   def show_balance
-    @balance
+    '%.2f' % @balance
   end
+
 end
 
-# balance = 0
-#   @transactions.each do |transaction|
-#     balance += transaction
-#     end
-#     return balance
-#
-# def balance
-#
-# end
-#
-# def add_money(money)
-#   balance
-# end
-#
+
 #

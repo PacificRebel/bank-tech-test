@@ -30,3 +30,4 @@ mkdir lib
 mkdir spec
 gem install rspec
 rspec --init
+gem install rubocop ("rubocop" -a to autocorrect style offenses)

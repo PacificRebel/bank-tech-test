@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 
 class Account
   attr_accessor :balance
@@ -15,7 +16,7 @@ class Account
   end
 
   def show_balance
-    return @balance
+    @balance
   end
 end
 

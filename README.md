@@ -3,7 +3,7 @@
 
 Requirements:
 - needs to run in IRB
-- bank account that takes a deposit and withdrawal
+- bank account that takes a deposit and withdrawal (remember to describe behaviour, not state)
 - should print a statement with the date, amount and balance
 - the data should be kept in memory (but not stored to a database)
 

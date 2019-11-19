@@ -38,11 +38,20 @@ describe Account do
   end
 
   describe '#print statement' do
-    it 'should print the value of a deposit and witdrawal in correct format' do
+    it 'should print the date, and value of one deposit and withdrawal in correct format' do
       Account.new
       subject.deposit(10)
       subject.withdraw(3)
-      expect(subject.print_statement).to eq "date || credit || debit || balance \n date here || 10.00 || 3.00 || 7.00"
+      expect(subject.print_statement).to eq "date || credit || debit || balance \n 19/11/2019 || 10.00 || 3.00 || 7.00"
     end
   end
+
+  # describe '#print statement' do
+  #   it 'should print the value of a deposit and witdrawal in correct format' do
+  #     Account.new
+  #     subject.deposit(10)
+  #     subject.withdraw(3)
+  #     expect(subject.print_statement).to eq "date || credit || debit || balance \n date here || 10.00 || 3.00 || 7.00"
+  #   end
+  # end
 end

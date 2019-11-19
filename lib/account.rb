@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Account
-  attr_accessor :balance, :show_balance, :deposit, :withdrawal
+  attr_accessor :balance, :show_balance, :deposit, :withdrawal, :datestamp
 
   def initialize
     @balance = 0
@@ -11,7 +11,7 @@ class Account
   def deposit(credited_money)
     @deposit_amount = credited_money
     self.balance += credited_money
-    # Time.now.strftime('%d/%m/%Y')
+    self.datestamp = Time.now.strftime('%d/%m/%Y')
   end
 
   def withdraw(debited_money)
@@ -31,6 +31,6 @@ class Account
   def print_statement
     # @deposit = deposit
     # @show_balance = show_balance
-    p "date || credit || debit || balance \n date here || #{format('%.2f', @deposit_amount)} || #{format('%.2f', @withdrawal_amount)} || #{format('%.2f', @balance)}"
+    p "date || credit || debit || balance \n #{@datestamp} || #{format('%.2f', @deposit_amount)} || #{format('%.2f', @withdrawal_amount)} || #{format('%.2f', @balance)}"
   end
 end

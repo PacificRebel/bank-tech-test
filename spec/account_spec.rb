@@ -42,8 +42,25 @@ describe Account do
       Account.new
       subject.deposit(10)
       subject.withdraw(3)
-      expect(subject.print_statement).to eq "date || credit || debit || balance \n 19/11/2019 || 10.00 || 3.00 || 7.00"
+      expect(subject.print_statement)
+        .to eq "date || credit || debit || balance \n 19/11/2019 || 10.00 || 3.00 || 7.00"
     end
+
+    describe '#print statement' do
+      it 'should print the date, and value of one deposit without withdrawal in correct format' do
+        Account.new
+        subject.deposit(10)
+        expect(subject.print_statement)
+          .to eq "date || credit || debit || balance \n 19/11/2019 || 10.00 ||  || 10.00"
+      end
+    end
+
+  #   it 'should print transactions in reverse chronological order' do
+  #     Account.new
+  #     subject.deposit(10)
+  #     subject.withdraw(3)
+  #     expect(subject.print_statement)
+  #       .to eq "date || credit || debit || balance \n 19/11/2019 || 10.00 || || 10.00 \n 19/11/2019 || || 3.00 || 7.00"
   end
 
   # describe '#print statement' do
@@ -51,7 +68,8 @@ describe Account do
   #     Account.new
   #     subject.deposit(10)
   #     subject.withdraw(3)
-  #     expect(subject.print_statement).to eq "date || credit || debit || balance \n date here || 10.00 || 3.00 || 7.00"
+  #     expect(subject.print_statement)
+        # .to eq "date || credit || debit || balance \n date here || 10.00 || 3.00 || 7.00"
   #   end
   # end
 end

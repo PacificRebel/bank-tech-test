@@ -29,8 +29,7 @@ class Account
   end
 
   def print_statement
-    # @deposit = deposit
-    # @show_balance = show_balance
-    p "date || credit || debit || balance \n #{@datestamp} || #{format('%.2f', @deposit_amount)} || #{format('%.2f', @withdrawal_amount)} || #{format('%.2f', @balance)}"
+    statement = ("date || credit || debit || balance \n #{@datestamp} || #{format('%.2f', @deposit_amount)} || #{format('%.2f', @withdrawal_amount)} || #{format('%.2f', @balance)}")
+    p statement
   end
 end

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Account
-  attr_accessor :balance, :show_balance, :deposit, :withdrawal, :datestamp
+  attr_accessor :balance, :show_balance, :deposit, :withdrawal, :datestamp, :transaction
 
   def initialize
     @balance = 0
@@ -30,9 +30,11 @@ class Account
   end
 
   def print_statement
-    transaction = "date || credit || debit || balance \n #{@datestamp} || #{@printed_deposit} || #{@printed_withdrawal} || #{format('%.2f', @balance)}"
-  #   transaction.each_line do |event|
-  #   p event
-  # end
+    transactions_array = []
+    @transaction = "date || credit || debit || balance \n #{@datestamp} || #{@printed_deposit} || #{@printed_withdrawal} || #{format('%.2f', @balance)}"
+    # @transaction.map do |transaction|
+       transactions_array.push(@transaction)
+       p transactions_array.join
+  end
  end
-end
+# end

@@ -8,18 +8,20 @@ class Account
     @show_balance = show_balance
   end
 
-  def deposit(money)
-    @deposit_amount = self.balance += money
+  def deposit(credited_money)
+    @deposit_amount = credited_money
+    self.balance += credited_money
     # Time.now.strftime('%d/%m/%Y')
   end
 
-  def withdraw(money)
+  def withdraw(debited_money)
     if balance <= 0
       p '0'
     else
-      @withdrawal_amount = self.balance -= money
+      @withdrawal_amount = debited_money
       # Time.now.strftime('%d/%m/%Y')
     end
+    self.balance -= debited_money
   end
 
   def show_balance

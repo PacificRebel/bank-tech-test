@@ -4,6 +4,9 @@ require 'transaction'
 require 'account'
 
 describe Account do
+  let(:printer) { double :printer }
+  let(:printer_class) { double :printer_class, new: printer }
+
   describe '#initialize' do
     it 'initializes with a balance of 0' do
       Account.new
@@ -31,6 +34,14 @@ describe Account do
       subject.deposit(10)
       subject.withdraw(3)
       expect(subject.balance).to eq 7
+    end
+  end
+
+  describe '#view' do
+    it 'gets statement from printer and pushes it into history array' do
+      Account.new
+      expect(printer).to receive(:view_history).with(subject.history)
+      subject.view(printer_class.new)
     end
   end
 end

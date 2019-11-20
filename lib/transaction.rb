@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# this class creates an instance of a transaction: deposit or withdrawal
 class Transaction
   attr_reader :datestamp, :amount, :type, :balance
 
@@ -10,6 +11,3 @@ class Transaction
     @balance = balance
   end
 end
-
-# @printed_deposit = format('%.2f', @deposit_amount)
-# self.datestamp = Time.now.strftime('%d/%m/%Y')

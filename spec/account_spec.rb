@@ -19,7 +19,6 @@ describe Account do
     end
   end
 
-  # edge case: test for someone withdrawing more than they have
   describe '#deposit' do
     it 'increases balance on deposit' do
       Account.new

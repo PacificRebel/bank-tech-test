@@ -1,6 +1,7 @@
 ### BANK ###
 
 
+
 Requirements:
 - needs to run in IRB
 - bank account that takes a deposit and withdrawal (remember to describe behaviour, not state)
@@ -24,10 +25,14 @@ date || credit || debit || balance
 ## SETUP ##
 
 From command line, to get folder structure and rspec set up:
-mkdir bank
-cd bank
-mkdir lib
-mkdir spec
-gem install rspec
-rspec --init
-gem install rubocop ("rubocop" -a to autocorrect style offenses)
+- mkdir bank
+- cd bank
+- mkdir lib
+- mkdir spec
+- gem install rspec
+- rspec --init
+- gem install rubocop
+
+## RUN ##
+- run tests with 'rspec' command
+- run rubocop with 'rubocop' command

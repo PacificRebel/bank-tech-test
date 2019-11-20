@@ -3,7 +3,10 @@
 require 'transaction'
 
 describe Transaction do
-  subject(:transaction) { described_class.new(type: 'credit', amount: 10, balance: 20) }
+  subject(:transaction) do
+    described_class.new(type: 'credit', amount: 10,\
+                        balance: 20)
+  end
 
   it 'is created with a datestamp' do
     expect(transaction.datestamp).to eq '20/11/2019'

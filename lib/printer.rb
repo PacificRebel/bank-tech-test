@@ -3,6 +3,7 @@
 require_relative 'account'
 require_relative 'transaction'
 
+# this class prints statement as required in readme
 class Printer
   def print_statement(array)
     prints = 'date || credit || debit || balance' + "\n"
@@ -15,5 +16,5 @@ class Printer
       prints += format('%.2f', event.amount).to_s + "\n"
     end
     prints
-    end
+  end
 end

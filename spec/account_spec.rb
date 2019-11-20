@@ -35,6 +35,12 @@ describe Account do
       subject.withdraw(3)
       expect(subject.balance).to eq 7
     end
+
+    it 'raises insufficient funds if withdrawal amount is more than balance' do
+      Account.new
+      subject.deposit(10)
+      expect { subject.withdraw(20) }.to raise_error('Insufficient funds')
+    end
   end
 
   describe '#view' do

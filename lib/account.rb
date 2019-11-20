@@ -1,40 +1,34 @@
 # frozen_string_literal: true
 
+require 'transaction'
+
 class Account
-  attr_accessor :balance, :show_balance, :deposit, :withdrawal, :datestamp, :transaction
+  attr_accessor :balance, :deposit, :withdraw, :history
 
-  def initialize
+  def initialize(transaction = Transaction)
     @balance = 0
+    @transaction = transaction
+    @history = []
   end
 
-  def deposit(credited_money)
-    @deposit_amount = credited_money
-    self.balance += credited_money
-    @printed_deposit = format('%.2f', @deposit_amount)
-    self.datestamp = Time.now.strftime('%d/%m/%Y')
+  def deposit(amount)
+    @balance += amount
+    apply_transaction('credit', amount)
   end
 
-  def withdraw(debited_money)
-    if balance <= 0
-      p '0'
-    else
-      @withdrawal_amount = debited_money
-      @printed_withdrawal = format('%.2f', @withdrawal_amount)
-      # Time.now.strftime('%d/%m/%Y')
-    end
-    self.balance -= debited_money
-  end
-
-  def show_balance
-    format('%.2f', @balance)
-  end
-
-  def print_statement
-    transactions_array = []
-    @transaction = "date || credit || debit || balance \n #{@datestamp} || #{@printed_deposit} || #{@printed_withdrawal} || #{format('%.2f', @balance)}"
-    # @transaction.map do |transaction|
-       transactions_array.push(@transaction)
-       p transactions_array.join
-  end
+  def withdraw(amount)
+    @balance -= amount
+    apply_transaction('debit', amount)
  end
-# end
+
+  def view(printer = Printer.new)
+    print printer.view_history(@history)
+  end
+end
+
+private
+
+def apply_transaction(type, amount)
+  transaction_event = @transaction.new(type: type, amount: amount, balance: @balance)
+  @history.push(transaction_event)
+end

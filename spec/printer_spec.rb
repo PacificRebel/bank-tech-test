@@ -6,7 +6,7 @@ require 'transaction'
 
 describe Printer do
   let(:deposit) { double :deposit, datestamp: '20/11/2019', type: 'credit', amount: 10, balance: 0 }
-  let(:withdraw) { double :withdraw, datestamp: '20/11/2019', type: 'debit', amount: 5, balance: 0 }
+  let(:withdraw) { double :withdraw, datestamp: '19/11/2019', type: 'debit', amount: 5, balance: 0 }
 
   describe '#print statement' do
     it 'should print transactions in reverse chronological order' do

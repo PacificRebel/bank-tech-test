@@ -23,7 +23,4 @@ describe Transaction do
   it 'has a new balance' do
     expect(subject.balance).to eq(20)
   end
-  # it 'has a transaction type' do
-  #   expect(subject.type).to eq 'deposit'
-  # end
 end

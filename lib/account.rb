@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
-require 'transaction'
+require_relative './transaction'
+require_relative './printer'
 
 # this class manages the bank account: deposits, withdrawals and persistence
 class Account
@@ -25,7 +26,7 @@ class Account
   end
 
   def view(printer = Printer.new)
-    print printer.view_history(@history)
+    print printer.print_statement(@history)
   end
 end
 

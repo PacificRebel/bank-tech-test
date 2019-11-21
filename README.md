@@ -1,11 +1,11 @@
 ### BANK ###
 
-How to run this on IRB:
-require './lib/account.rb'
-account = Account.new
-account.deposit(100)
-account.deposit(250)
-account.withdraw(50)
+How to run this on IRB:  
+require './lib/account.rb'  
+account = Account.new  
+account.deposit(100)  
+account.deposit(250)  
+account.withdraw(50)  
 account.view(printer = Printer.new)
 
 ![statement](./images/bank_statement_screenshot.png)

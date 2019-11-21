@@ -8,7 +8,7 @@ account.deposit(250)
 account.withdraw(50)
 account.view(printer = Printer.new)
 
-'./images/bank_statement_screenshot.png'
+![statement](./images/bank_statement_screenshot.png)
 
 Requirements:
 - needs to run in IRB
